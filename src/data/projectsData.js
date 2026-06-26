@@ -260,13 +260,13 @@ export const projects = [
 
     gallery: [koneksi1, koneksi2, koneksi3, koneksi4, koneksi5, koneksi6],
 
-    documents: [
-      {
-        title: "Final Project Report",
-        file: "/documents/laporan-akhir-koneksi.pdf",
-        type: "PDF",
-      },
-    ],
+    // documents: [
+    //   {
+    //     title: "Final Project Report",
+    //     file: "/documents/laporan-akhir-koneksi.pdf",
+    //     type: "PDF",
+    //   },
+    // ],
 
     github: "",
     demo: "",
