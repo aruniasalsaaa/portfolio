@@ -1,9 +1,11 @@
 import profilePhoto from "../assets/images/arunia-outline.png";
 import { FaServer, FaAward } from "react-icons/fa";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaDownload  } from "react-icons/fa6";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="hero"
@@ -76,53 +78,82 @@ const Hero = () => {
               )}
             </div>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                className="
-                  px-6
-                  py-3
-                  rounded-xl
-                  bg-gradient-to-r
-                  from-[#003A6B]
-                  to-[#3776A1]
-                  text-white
-                  font-semibold
-                  shadow-lg
-                  hover:-translate-y-1
-                  hover:shadow-xl
-                  transition-all
-                  duration-300
-                  "
-              >
-                View Projects
-              </a>
+           {/* Buttons */}
+<div className="flex flex-wrap gap-4">
+  {/* View Projects */}
+  <button
+    onClick={() => navigate("/projects")}
+    className="
+      px-6
+      py-3
+      rounded-xl
+      bg-gradient-to-r
+      from-[#003A6B]
+      to-[#3776A1]
+      text-white
+      font-semibold
+      shadow-lg
+      hover:-translate-y-1
+      hover:shadow-xl
+      transition-all
+      duration-300
+      cursor-pointer
+    "
+  >
+    View Projects
+  </button>
 
-              <a
-                href="https://www.linkedin.com/in/arunia-salsanur-fais-21b625333"
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  px-6
-                  py-3
-                  rounded-xl
-                  border
-                  border-[#3776A1]
-                  text-[#3776A1]
-                  hover:bg-[#F0F8FC]
-                  hover:-translate-y-1
-                  transition-all
-                  duration-300
-                  flex
-                  items-center
-                  gap-2
-                  "
-              >
-                LinkedIn
-                <FaArrowUpRightFromSquare className="text-sm" />
-              </a>
-            </div>
+  {/* Download CV */}
+  <a
+    href="/documents/CV-Arunia-Salsanur-Fais.pdf"
+    download
+    className="
+      px-6
+      py-3
+      rounded-xl
+      bg-white
+      border
+      border-[#003A6B]
+      text-[#003A6B]
+      font-semibold
+      hover:bg-[#F0F8FC]
+      hover:-translate-y-1
+      transition-all
+      duration-300
+      flex
+      items-center
+      gap-2
+    "
+  >
+    <FaDownload />
+    Download CV
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/arunia-salsanur-fais-21b625333"
+    target="_blank"
+    rel="noreferrer"
+    className="
+      px-6
+      py-3
+      rounded-xl
+      border
+      border-[#3776A1]
+      text-[#3776A1]
+      hover:bg-[#F0F8FC]
+      hover:-translate-y-1
+      transition-all
+      duration-300
+      flex
+      items-center
+      gap-2
+    "
+  >
+    LinkedIn
+    <FaArrowUpRightFromSquare className="text-sm" />
+  </a>
+</div>
           </div>
 
           {/* RIGHT SIDE */}

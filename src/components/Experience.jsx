@@ -139,7 +139,7 @@ const Experience = () => {
                     className={`text-xs transition ${
                       isCyber
                         ? "text-white/60 hover:text-white"
-                        : "text-slate-400 hover:text-[#003A6B]"
+                        : "text-slate-400 hover:text-[#003A6B] cursor-pointer"
                     }`}
                   >
                     <FaExternalLinkAlt size={12} />
@@ -184,7 +184,7 @@ const Experience = () => {
         <div className="mt-6 text-center">
           <button
             onClick={() => navigate("/experience")}
-            className="inline-flex items-center gap-2 text-[#003A6B] text-sm font-semibold group"
+            className="inline-flex items-center gap-2 text-[#003A6B] text-sm font-semibold group cursor-pointer"
           >
             View All Experience
             <FaArrowRight

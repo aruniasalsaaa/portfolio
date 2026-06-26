@@ -36,21 +36,19 @@ const Certificates = () => {
           {featuredCertificates.map((cert) => (
             <div
               key={cert.id}
-              onClick={() => navigate(`/certificates/${cert.slug}`)}
               className="
-                group
-                bg-white
-                border
-                border-[#D6EAF5]
-                rounded-3xl
-                overflow-hidden
-                shadow-md
-                hover:shadow-xl
-                hover:-translate-y-1.5
-                transition-all
-                duration-300
-                cursor-pointer
-              "
+    group
+    bg-white
+    border
+    border-[#D6EAF5]
+    rounded-3xl
+    overflow-hidden
+    shadow-md
+    hover:shadow-xl
+    hover:-translate-y-1.5
+    transition-all
+    duration-300
+  "
             >
               {/* Thumbnail */}
               <div className="h-32 bg-[#F8FBFD] overflow-hidden">
@@ -81,25 +79,41 @@ const Certificates = () => {
                   {cert.issuer}
                 </p>
 
-                <div className="mt-3 pt-3 border-t border-[#EEF5FA] flex justify-end">
-                  <div
+                <div className="mt-3 pt-3 border-t border-[#EEF5FA] flex justify-between items-center">
+                  <button
+                    onClick={() => navigate(`/certificates/${cert.slug}`)}
                     className="
-                      w-8
-                      h-8
-                      rounded-full
-                      bg-[#EAF5FB]
-                      flex
-                      items-center
-                      justify-center
-                      text-[#3776A1]
-                      group-hover:bg-[#3776A1]
-                      group-hover:text-white
-                      group-hover:translate-x-1
-                      transition-all
-                    "
+      text-[#3776A1]
+      text-xs
+      font-semibold
+      hover:text-[#003A6B]
+      transition
+      cursor-pointer
+    "
+                  >
+                    View Details
+                  </button>
+
+                  <button
+                    onClick={() => navigate(`/certificates/${cert.slug}`)}
+                    className="
+      w-8
+      h-8
+      rounded-full
+      bg-[#EAF5FB]
+      flex
+      items-center
+      justify-center
+      text-[#3776A1]
+      hover:bg-[#3776A1]
+      hover:text-white
+      hover:translate-x-1
+      transition-all
+      cursor-pointer
+    "
                   >
                     <FaArrowRight size={12} />
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -117,6 +131,7 @@ const Certificates = () => {
               text-[#003A6B]
               font-semibold
               group
+              cursor-pointer
             "
           >
             <span>Explore All Certifications</span>

@@ -3,12 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { projects } from "../data/projectsData";
 
 const gradientMap = {
-  "security-monitoring-lab":
-    "bg-gradient-to-br from-[#003A6B] to-[#3776A1]",
-  "koneksi-alumni":
-    "bg-gradient-to-br from-[#3776A1] to-[#5D9BC5]",
-  "phishing-investigation":
-    "bg-gradient-to-br from-[#89CFF1] to-[#B8E3F7]",
+  "security-monitoring-lab": "bg-gradient-to-br from-[#003A6B] to-[#3776A1]",
+  "koneksi-alumni": "bg-gradient-to-br from-[#3776A1] to-[#5D9BC5]",
+  "phishing-investigation": "bg-gradient-to-br from-[#89CFF1] to-[#B8E3F7]",
 };
 
 const iconMap = {
@@ -26,7 +23,6 @@ const Projects = () => {
       className="py-6 px-5 bg-gradient-to-b from-[#F8FBFD] to-white"
     >
       <div className="max-w-6xl mx-auto">
-
         {/* HEADER (lebih compact) */}
         <div className="text-center mb-5">
           <p className="text-[#3776A1] font-semibold tracking-wider mb-1 text-xs">
@@ -110,25 +106,30 @@ const Projects = () => {
                     <button
                       onClick={() => navigate(`/projects/${project.slug}`)}
                       className="
-                        text-[#3776A1]
-                        font-semibold
-                        text-xs
-                        hover:text-[#003A6B]
-                        transition
-                      "
+      text-[#3776A1]
+      font-semibold
+      text-xs
+      hover:text-[#003A6B]
+      transition
+      cursor-pointer
+    "
                     >
                       View Details
                     </button>
 
-                    <FaArrowRight
+                    <button
+                      onClick={() => navigate(`/projects/${project.slug}`)}
                       className="
-                        text-[#3776A1]
-                        text-sm
-                        pointer-events-none
-                        group-hover:translate-x-1
-                        transition-transform
-                      "
-                    />
+      text-[#3776A1]
+      text-sm
+      cursor-pointer
+      hover:text-[#003A6B]
+      hover:translate-x-1
+      transition-all
+    "
+                    >
+                      <FaArrowRight />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -148,7 +149,6 @@ const Projects = () => {
             </span>
           </a>
         </div>
-
       </div>
     </section>
   );
