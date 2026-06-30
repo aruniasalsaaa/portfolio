@@ -139,15 +139,15 @@ const Projects = () => {
 
         {/* VIEW ALL lebih kecil */}
         <div className="mt-4 text-center">
-          <a
-            href="/projects"
-            className="inline-flex items-center gap-2 text-[#003A6B] font-semibold text-sm group"
+          <button
+            onClick={() => navigate("/projects")}
+            className="inline-flex items-center gap-2 text-[#003A6B] font-semibold text-sm group cursor-pointer"
           >
             <span>Explore All Projects</span>
             <span className="w-7 h-7 rounded-full bg-[#EAF5FB] flex items-center justify-center group-hover:bg-[#3776A1] group-hover:text-white transition-all">
               <FaArrowRight size={11} />
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
