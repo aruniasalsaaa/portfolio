@@ -5,8 +5,9 @@ import { certificatesData } from "../data/certificatesData";
 const Certificates = () => {
   const navigate = useNavigate();
 
-  const featuredCertificates = certificatesData
+  const featuredCertificates = [...certificatesData]
     .filter((item) => item.featured)
+    .sort((a, b) => new Date(b.issueDate) - new Date(a.issueDate))
     .slice(0, 4);
 
   return (
@@ -37,18 +38,18 @@ const Certificates = () => {
             <div
               key={cert.id}
               className="
-    group
-    bg-white
-    border
-    border-[#D6EAF5]
-    rounded-3xl
-    overflow-hidden
-    shadow-md
-    hover:shadow-xl
-    hover:-translate-y-1.5
-    transition-all
-    duration-300
-  "
+                group
+                bg-white
+                border
+                border-[#D6EAF5]
+                rounded-3xl
+                overflow-hidden
+                shadow-md
+                hover:shadow-xl
+                hover:-translate-y-1.5
+                transition-all
+                duration-300
+              "
             >
               {/* Thumbnail */}
               <div className="h-32 bg-[#F8FBFD] overflow-hidden">
@@ -67,7 +68,10 @@ const Certificates = () => {
                   </span>
 
                   <span className="text-[11px] text-[#3776A1] font-medium">
-                    {cert.issueDate}
+                    {new Date(cert.issueDate).toLocaleDateString("en-US", {
+                      month: "short",
+                      year: "numeric",
+                    })}
                   </span>
                 </div>
 
@@ -83,13 +87,13 @@ const Certificates = () => {
                   <button
                     onClick={() => navigate(`/certificates/${cert.slug}`)}
                     className="
-      text-[#3776A1]
-      text-xs
-      font-semibold
-      hover:text-[#003A6B]
-      transition
-      cursor-pointer
-    "
+                      text-[#3776A1]
+                      text-xs
+                      font-semibold
+                      hover:text-[#003A6B]
+                      transition
+                      cursor-pointer
+                    "
                   >
                     View Details
                   </button>
@@ -97,20 +101,20 @@ const Certificates = () => {
                   <button
                     onClick={() => navigate(`/certificates/${cert.slug}`)}
                     className="
-      w-8
-      h-8
-      rounded-full
-      bg-[#EAF5FB]
-      flex
-      items-center
-      justify-center
-      text-[#3776A1]
-      hover:bg-[#3776A1]
-      hover:text-white
-      hover:translate-x-1
-      transition-all
-      cursor-pointer
-    "
+                      w-8
+                      h-8
+                      rounded-full
+                      bg-[#EAF5FB]
+                      flex
+                      items-center
+                      justify-center
+                      text-[#3776A1]
+                      hover:bg-[#3776A1]
+                      hover:text-white
+                      hover:translate-x-1
+                      transition-all
+                      cursor-pointer
+                    "
                   >
                     <FaArrowRight size={12} />
                   </button>

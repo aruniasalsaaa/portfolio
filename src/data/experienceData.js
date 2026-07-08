@@ -4,6 +4,7 @@ export const experiences = [
     title: "Computer & Network Security Mentee",
     organization: "Infinite Learning (Kampus Merdeka Mandiri)",
     period: "Mar 2025 – Jul 2025",
+    sortDate: "2025-07",
     type: "Cybersecurity Training",
     icon: "cybersecurity",
     description:
@@ -38,6 +39,7 @@ export const experiences = [
     title: "Frontend Web Developer",
     organization: "YARSI University",
     period: "Sep 2024 – Jan 2025 • Sep 2025 – Jan 2026",
+    sortDate: "2026-01",
     type: "Web Development",
     icon: "code",
     description:
@@ -67,6 +69,7 @@ export const experiences = [
     title: "Media Department Coordinator",
     organization: "LDK KAHFI - YARSI University",
     period: "Nov 2024 – Dec 2025",
+    sortDate: "2025-12",
     type: "Organizational Experience",
     icon: "leadership",
 
@@ -98,6 +101,7 @@ export const experiences = [
     title: "Scrum Master",
     organization: "YARSI University",
     period: "Sep 2024 – Jan 2025 • Sep 2025 – Jan 2026",
+    sortDate: "2026-01",
     type: "Project Management",
     icon: "users",
 
@@ -132,6 +136,7 @@ export const experiences = [
     title: "Product Owner",
     organization: "YARSI University",
     period: "Sep 2024 – Jan 2025 • Sep 2025 – Jan 2026",
+    sortDate: "2026-01",
     type: "Product Management",
     icon: "data",
 
@@ -165,6 +170,7 @@ export const experiences = [
     title: "Data Administrator",
     organization: "YARSI University",
     period: "Sep 2025 – Jan 2026",
+    sortDate: "2026-01",
     type: "Data Management",
     icon: "excel",
 
@@ -190,5 +196,105 @@ export const experiences = [
 
     professionalGrowth:
       "Enhanced attention to detail, data quality management, analytical thinking, and information organization skills through handling and maintaining large volumes of structured data.",
+  },
+
+  {
+    slug: "cybersecurity-training-futuremakers",
+    title: "Cybersecurity Trainee",
+    organization:
+      "Plan International Indonesia & Standard Chartered Foundation",
+    sortDate: "2026-07",
+    period: "May 2026 – Jul 2026",
+    type: "Cybersecurity Training",
+    icon: "cybersecurity",
+
+    description:
+      "Completed an intensive cybersecurity training program combining instructor-led online sessions, self-paced LMS learning, practical laboratory assignments, and a capstone project. The program focused on cybersecurity fundamentals, network security, vulnerability assessment, endpoint security, incident response, and hands-on security implementation.",
+
+    achievements: [
+      "Completed 109 learning hours covering six cybersecurity modules",
+      "Attended instructor-led online training sessions and workshops",
+      "Completed practical hands-on laboratory assignments through the LMS",
+      "Prepared technical reports for each practical assignment",
+      "Led a team during the capstone cybersecurity project as Team Leader",
+      "Developed project documentation and presentation materials for the final evaluation",
+    ],
+
+    technologies: [
+      "Cybersecurity",
+      "Network Security",
+      "Incident Response",
+      "Risk Management",
+      "Vulnerability Assessment",
+      "Endpoint Security",
+    ],
+
+    professionalGrowth:
+      "Strengthened cybersecurity knowledge through hands-on practice, technical documentation, teamwork, leadership, and project-based learning.",
+  },
+
+  {
+    slug: "iyrc-liaison-officer",
+    title: "Liaison Officer",
+    organization: "Indonesia Youth Robot Competition (IYRC)",
+    period: "May 2025",
+    sortDate: "2025-05",
+    type: "Event Committee",
+    icon: "leadership",
+
+    description:
+      "Served as a Liaison Officer during the Indonesia Youth Robot Competition, assisting participants, parents, and accompanying teachers throughout the event while ensuring smooth communication and coordination.",
+
+    achievements: [
+      "Guided participants from kindergarten to senior high school to their designated competition areas",
+      "Provided information and assistance to participants, parents, and teachers",
+      "Coordinated participant movement during the event schedule",
+      "Helped maintain an organized and welcoming competition environment",
+      "Collaborated with committee members to ensure smooth event operations",
+    ],
+
+    technologies: [
+      "Communication",
+      "Public Service",
+      "Coordination",
+      "Problem Solving",
+      "Event Management",
+    ],
+
+    professionalGrowth:
+      "Improved interpersonal communication, adaptability, customer service, and event coordination skills while supporting participants from diverse age groups.",
+  },
+
+  {
+    slug: "national-hajj-seminar-media-coordinator",
+    title: "Media Coordinator & Documentation Committee",
+    organization: "National Hajj Seminar - YARSI University",
+    period: "Jul 2025",
+    sortDate: "2025-07",
+    type: "Event Committee",
+    icon: "leadership",
+
+    description:
+      "Served as Media Coordinator and Documentation Committee member for the National Hajj Seminar organized by Universitas YARSI. Coordinated media volunteers while producing photo and video documentation throughout the event.",
+
+    achievements: [
+      "Coordinated media team members assigned to seminar documentation",
+      "Assigned documentation responsibilities to photographers and videographers",
+      "Captured photo and video documentation during the event",
+      "Ensured complete media coverage of seminar activities",
+      "Collaborated with the organizing committee to support event publication and documentation",
+    ],
+
+    technologies: [
+      "Leadership",
+      "Team Coordination",
+      "Photography",
+      "Videography",
+      "Communication",
+      "Event Management",
+    ],
+
+    professionalGrowth:
+      "Strengthened leadership, coordination, event documentation, communication, and organizational skills while managing media responsibilities during a national-level seminar.",
   },
 ];

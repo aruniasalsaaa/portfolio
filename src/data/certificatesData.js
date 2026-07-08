@@ -6,6 +6,9 @@ import studiIndependen from "../assets/certifications/stupen.jpg";
 import bestProject from "../assets/certifications/best-project.jpg";
 import toeic from "../assets/certifications/toeic.jpg";
 import ldkKahfi from "../assets/certifications/koordinator-media-kahfi.jpg";
+import cybersecurityTraining from "../assets/certifications/cybersecurity-training.jpg";
+import seminarHaji from "../assets/certifications/seminar-haji.jpg";
+import panitiaIyrc from "../assets/certifications/panitia-iyrc.jpg";
 
 export const certificatesData = [
   {
@@ -13,7 +16,7 @@ export const certificatesData = [
     slug: "isc2-certified-in-cybersecurity-course-conclusion",
     title: "CC Course Conclusion & Final Assessment",
     issuer: "ISC2",
-    issueDate: "2026",
+    issueDate: "2026-04-15",
     type: "Professional",
     category: "Cybersecurity",
 
@@ -53,7 +56,7 @@ export const certificatesData = [
     slug: "ccnav7-switching-routing-wireless-essentials",
     title: "CCNAv7: Switching, Routing, and Wireless Essentials",
     issuer: "Cisco Networking Academy",
-    issueDate: "2024",
+    issueDate: "2024-06-26",
     type: "Networking",
     category: "Networking",
 
@@ -93,7 +96,7 @@ export const certificatesData = [
     slug: "ccnav7-introduction-to-networks",
     title: "CCNAv7: Introduction to Networks",
     issuer: "Cisco Networking Academy",
-    issueDate: "2024",
+    issueDate: "2024-08-24",
     type: "Networking",
     category: "Networking",
 
@@ -133,7 +136,7 @@ export const certificatesData = [
     slug: "softskills-greenskills-training",
     title: "Softskills & Greenskills Training",
     issuer: "Plan International Indonesia",
-    issueDate: "2026",
+    issueDate: "2026-05-06",
     type: "Training",
     category: "Soft Skills",
 
@@ -175,7 +178,7 @@ export const certificatesData = [
     slug: "independent-study-cybersecurity-soc-fundamentals",
     title: "Independent Study - Computer & Network Security",
     issuer: "Infinite Learning",
-    issueDate: "2025",
+    issueDate: "2025-07-31",
     type: "Training",
     category: "Independent Study",
 
@@ -223,7 +226,7 @@ export const certificatesData = [
     slug: "best-project-award-security-monitoring-lab",
     title: "Best Project Award - Security Monitoring Lab",
     issuer: "Infinite Learning",
-    issueDate: "2025",
+    issueDate: "2025-07-31",
     type: "Achievement",
     category: "Award",
 
@@ -262,7 +265,7 @@ export const certificatesData = [
     slug: "toeic-listening-reading",
     title: "TOEIC Listening & Reading",
     issuer: "PT. International Test Center",
-    issueDate: "2025",
+    issueDate: "2025-06-11",
     type: "Language",
     category: "English Proficiency",
 
@@ -301,7 +304,7 @@ export const certificatesData = [
     slug: "ldk-organization-membership",
     title: "Lembaga Dakwah Kampus (LDK) KAHFI",
     issuer: "LDK KAHFI",
-    issueDate: "2025",
+    issueDate: "2026-02-04",
     type: "Organization",
     category: "Leadership",
 
@@ -338,4 +341,127 @@ export const certificatesData = [
 
     featured: false,
   },
+
+  {
+  id: 9,
+  slug: "futuremakers-cybersecurity-training",
+  title: "Cybersecurity Training",
+  issuer: "Plan International Indonesia & Standard Chartered Foundation",
+  issueDate: "2026-07-02",
+  type: "Training",
+  category: "Cybersecurity",
+
+  description:
+    "Successfully completed the Cybersecurity Training under the Futuremakers Youth Employability Programme organized by Plan International Indonesia and Standard Chartered Foundation. The program covered essential security principles, network security fundamentals, endpoint security, vulnerability assessment, risk management, incident response, and a project-based cybersecurity implementation.",
+
+  skills: [
+    "Cybersecurity Fundamentals",
+    "Network Security",
+    "Endpoint Security",
+    "Vulnerability Assessment",
+    "Risk Management",
+    "Incident Response",
+    "Security Principles",
+  ],
+
+  outcomes: [
+    "Completed 109 learning hours of cybersecurity training.",
+    "Built practical knowledge of cybersecurity concepts and best practices.",
+    "Completed a project-based cybersecurity implementation.",
+  ],
+
+  credentialId: "",
+  credentialUrl: "",
+
+  image: cybersecurityTraining,
+
+  preview: "/documents/cybersecurity-training.pdf",
+  previewType: "pdf",
+
+  file: "/documents/cybersecurity-training.pdf",
+
+  featured: true,
+},
+
+{
+  id: 10,
+  slug: "seminar-nasional-haji-committee",
+  title: "Committee - National Hajj Seminar",
+  issuer: "Universitas YARSI",
+  issueDate: "2025-07-30",
+  type: "Organization",
+  category: "Committee",
+
+  description:
+    "Served as a committee member for the National Hajj Seminar organized by Universitas YARSI. Contributed to event coordination, communication, and operational support to ensure the successful execution of the national seminar.",
+
+  skills: [
+    "Event Management",
+    "Communication",
+    "Teamwork",
+    "Coordination",
+    "Problem Solving",
+  ],
+
+  outcomes: [
+    "Supported the successful execution of a national seminar.",
+    "Collaborated with committee members in organizing the event.",
+    "Strengthened organizational and communication skills.",
+  ],
+
+  role: "Committee",
+
+  credentialId: "",
+  credentialUrl: "",
+
+  image: seminarHaji,
+
+  preview: "",
+  previewType: "",
+
+  file: "",
+
+  featured: false,
+},
+
+{
+  id: 11,
+  slug: "iyrc-committee",
+  title: "Committee - Indonesia Youth Robot Competition",
+  issuer: "Indonesia Youth Robot Federation & Universitas YARSI",
+  issueDate: "2025-05-18",
+  type: "Organization",
+  category: "Committee",
+
+  description:
+    "Served as a committee member for the Indonesia Youth Robot Competition (IYRC), assisting in event organization, participant coordination, and operational activities throughout the competition.",
+
+  skills: [
+    "Event Coordination",
+    "Teamwork",
+    "Communication",
+    "Organization",
+    "Problem Solving",
+  ],
+
+  outcomes: [
+    "Contributed to the successful implementation of the competition.",
+    "Coordinated with committee members during event operations.",
+    "Improved organizational and teamwork skills.",
+  ],
+
+  role: "Committee",
+
+  credentialId: "",
+  credentialUrl: "",
+
+  image: panitiaIyrc,
+
+  preview: "",
+  previewType: "",
+
+  file: "",
+
+  featured: false,
+},
 ];

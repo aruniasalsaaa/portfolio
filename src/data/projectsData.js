@@ -30,6 +30,7 @@ export const projects = [
     projectType: "Capstone Project",
 
     status: "Completed",
+    sortDate: "2025-07",
 
     period: "Mar 2025 – Jul 2025",
 
@@ -156,6 +157,7 @@ export const projects = [
     projectType: "Academic Project",
 
     status: "Completed",
+    sortDate: "2026-01",
 
     period: "Sep 2025 – Jan 2026",
 
@@ -287,6 +289,7 @@ export const projects = [
     projectType: "Personal Project",
 
     status: "Completed",
+    sortDate: "2025-06",
 
     period: "June 2025",
 

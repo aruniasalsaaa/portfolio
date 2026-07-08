@@ -17,13 +17,21 @@ const iconMap = {
 const Projects = () => {
   const navigate = useNavigate();
 
+  // Ambil 3 project terbaru berdasarkan sortDate
+  const latestProjects = [...projects]
+    .sort(
+      (a, b) =>
+        new Date(`${b.sortDate}-01`) - new Date(`${a.sortDate}-01`)
+    )
+    .slice(0, 3);
+
   return (
     <section
       id="projects"
       className="py-6 px-5 bg-gradient-to-b from-[#F8FBFD] to-white"
     >
       <div className="max-w-6xl mx-auto">
-        {/* HEADER (lebih compact) */}
+        {/* HEADER */}
         <div className="text-center mb-5">
           <p className="text-[#3776A1] font-semibold tracking-wider mb-1 text-xs">
             FEATURED PROJECTS
@@ -38,9 +46,9 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* GRID lebih rapat */}
+        {/* GRID */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {projects.map((project) => {
+          {latestProjects.map((project) => {
             const Icon = iconMap[project.slug];
 
             return (
@@ -83,7 +91,7 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  {/* TECH max 3 */}
+                  {/* TECHNOLOGIES */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
@@ -106,13 +114,13 @@ const Projects = () => {
                     <button
                       onClick={() => navigate(`/projects/${project.slug}`)}
                       className="
-      text-[#3776A1]
-      font-semibold
-      text-xs
-      hover:text-[#003A6B]
-      transition
-      cursor-pointer
-    "
+                        text-[#3776A1]
+                        font-semibold
+                        text-xs
+                        hover:text-[#003A6B]
+                        transition
+                        cursor-pointer
+                      "
                     >
                       View Details
                     </button>
@@ -120,13 +128,13 @@ const Projects = () => {
                     <button
                       onClick={() => navigate(`/projects/${project.slug}`)}
                       className="
-      text-[#3776A1]
-      text-sm
-      cursor-pointer
-      hover:text-[#003A6B]
-      hover:translate-x-1
-      transition-all
-    "
+                        text-[#3776A1]
+                        text-sm
+                        cursor-pointer
+                        hover:text-[#003A6B]
+                        hover:translate-x-1
+                        transition-all
+                      "
                     >
                       <FaArrowRight />
                     </button>
@@ -137,7 +145,7 @@ const Projects = () => {
           })}
         </div>
 
-        {/* VIEW ALL lebih kecil */}
+        {/* VIEW ALL */}
         <div className="mt-4 text-center">
           <button
             onClick={() => navigate("/projects")}
