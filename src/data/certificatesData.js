@@ -416,12 +416,12 @@ export const certificatesData = [
 
   image: seminarHaji,
 
-  preview: "",
-  previewType: "",
+  preview: "/documents/panitia-seminar-nasional-haji.pdf",
+  previewType: "pdf",
 
-  file: "",
+  file: "/documents/panitia-seminar-nasional-haji.pdf",
 
-  featured: false,
+  featured: true,
 },
 
 {
@@ -457,11 +457,11 @@ export const certificatesData = [
 
   image: panitiaIyrc,
 
-  preview: "",
-  previewType: "",
+  preview: "/documents/panitia-iyrc.pdf",
+  previewType: "pdf",
 
-  file: "",
+  file: "/documents/panitia-iyrc.pdf",
 
-  featured: false,
+  featured: true,
 },
 ];

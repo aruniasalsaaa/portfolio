@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const CertificatesPage = () => {
   const [filter, setFilter] = useState("All");
   const navigate = useNavigate();
+
   const categories = [
     "All",
     "Cybersecurity",
@@ -18,15 +19,17 @@ const CertificatesPage = () => {
     "Leadership",
   ];
 
+  // Filter + Sort (Newest → Oldest)
   const filteredData = (
     filter === "All"
-      ? certificatesData
+      ? [...certificatesData]
       : certificatesData.filter((c) => c.category === filter)
-  ).sort((a, b) => Number(b.issueDate) - Number(a.issueDate));
+  ).sort((a, b) => new Date(b.issueDate) - new Date(a.issueDate));
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-[#F8FBFD] to-white py-20 px-6">
       <Navbar />
+
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
         <div className="text-center mb-10">
@@ -35,8 +38,8 @@ const CertificatesPage = () => {
           </h1>
 
           <p className="mt-3 text-slate-500 max-w-2xl mx-auto text-sm">
-            A collection of certifications, training programs, achievements, and
-            professional development activities.
+            A collection of certifications, training programs, achievements,
+            and professional development activities.
           </p>
         </div>
 
@@ -98,26 +101,32 @@ const CertificatesPage = () => {
               {/* ISSUER */}
               <p className="text-sm text-slate-600">{cert.issuer}</p>
 
-              {/* YEAR */}
+              {/* DATE */}
               <p className="text-xs text-[#3776A1] font-medium mt-1">
                 {cert.issueDate}
               </p>
 
-              {/* EXTRA INFO */}
+              {/* SCORE */}
               {cert.score && (
                 <p className="text-xs text-green-600 mt-1 font-semibold">
                   Score: {cert.score}
                 </p>
               )}
 
+              {/* ROLE */}
               {cert.role && (
-                <p className="text-xs text-slate-500 mt-1">Role: {cert.role}</p>
+                <p className="text-xs text-slate-500 mt-1">
+                  Role: {cert.role}
+                </p>
               )}
 
               {/* FOOTER */}
               <div className="mt-4 border-t border-[#EAF5FB] pt-3 flex justify-end">
                 <button
-                  onClick={() => navigate(`/certificates/${cert.slug}`)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(`/certificates/${cert.slug}`);
+                  }}
                   className="cursor-pointer"
                 >
                   <FaArrowRight className="text-[#3776A1] group-hover:translate-x-2 transition-all duration-300" />

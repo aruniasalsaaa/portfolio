@@ -20,62 +20,19 @@ const iconMap = {
   excel: FaDatabase,
 };
 
-// Convert month string → number
-const monthMap = {
-  Jan: 0,
-  Feb: 1,
-  Mar: 2,
-  Apr: 3,
-  May: 4,
-  Jun: 5,
-  Jul: 6,
-  Aug: 7,
-  Sep: 8,
-  Oct: 9,
-  Nov: 10,
-  Dec: 11,
-};
-
-// ambil tanggal "terbaru" dari field period
-const getLatestEndDate = (period) => {
-  if (!period) return new Date(0);
-
-  // kalau ada multiple (•), ambil semua segment
-  const segments = period.split("•");
-
-  let latest = new Date(0);
-
-  segments.forEach((seg) => {
-    const cleaned = seg.trim();
-
-    // ambil bagian akhir setelah "–" atau "-"
-    const parts = cleaned.split("–");
-    const endPart = (parts[1] || parts[0]).trim();
-
-    const [mon, year] = endPart.split(" ");
-    const date = new Date(parseInt(year), monthMap[mon] ?? 0, 1);
-
-    if (date > latest) {
-      latest = date;
-    }
-  });
-
-  return latest;
-};
-
 const ExperiencePage = () => {
   const navigate = useNavigate();
 
-  // 🔥 SORT dari terbaru ke terlama
-  const sortedExperiences = [...experiences].sort((a, b) => {
-    return getLatestEndDate(b.period) - getLatestEndDate(a.period);
-  });
+  // Sort terbaru → terlama berdasarkan sortDate
+  const sortedExperiences = [...experiences].sort(
+    (a, b) => new Date(`${b.sortDate}-01`) - new Date(`${a.sortDate}-01`)
+  );
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-white to-[#F8FBFD] px-6 py-20">
-      <div className="max-w-6xl mx-auto">
-        <Navbar />
+      <Navbar />
 
+      <div className="max-w-6xl mx-auto">
         {/* HEADER */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
@@ -90,12 +47,12 @@ const ExperiencePage = () => {
 
         {/* EXPERIENCE CARDS */}
         <div className="grid md:grid-cols-2 gap-6">
-          {sortedExperiences.map((exp, index) => {
+          {sortedExperiences.map((exp) => {
             const Icon = iconMap[exp.icon] || FaLaptopCode;
 
             return (
               <div
-                key={index}
+                key={exp.slug}
                 className="group bg-white border border-[#D6EAF5] rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 {/* TOP BAR */}
@@ -105,15 +62,15 @@ const ExperiencePage = () => {
                   {/* HEADER */}
                   <div className="flex gap-4 mb-4">
                     <div className="w-12 h-12 mt-1 rounded-xl bg-gradient-to-br from-[#003A6B] to-[#3776A1] text-white flex items-center justify-center shrink-0">
-                      <Icon />
+                      <Icon size={20} />
                     </div>
 
-                    <div>
+                    <div className="flex-1">
                       <span className="inline-block px-3 py-1 rounded-full bg-[#EAF5FB] text-[#3776A1] text-[10px] font-semibold uppercase tracking-wide mb-2">
                         {exp.type}
                       </span>
 
-                      <h3 className="font-bold text-slate-900 text-lg">
+                      <h3 className="font-bold text-slate-900 text-lg leading-snug">
                         {exp.title}
                       </h3>
 
@@ -147,10 +104,13 @@ const ExperiencePage = () => {
                   {/* BUTTON */}
                   <button
                     onClick={() => {
-                      window.scrollTo(0, 0);
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      });
                       navigate(`/experience/${exp.slug}`);
                     }}
-                    className="flex items-center gap-2 text-[#3776A1] font-semibold group-hover:gap-3 transition-all cursor-pointer"
+                    className="flex items-center gap-2 text-[#3776A1] font-semibold hover:gap-3 transition-all cursor-pointer"
                   >
                     View Details
                     <FaArrowRight className="text-sm" />

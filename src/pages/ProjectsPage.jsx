@@ -16,11 +16,12 @@ const ProjectsPage = () => {
 
   const categories = ["All", "Cybersecurity", "Web Development"];
 
+  // Filter + Sort (Newest → Oldest)
   const filteredProjects = (
     filter === "All"
-      ? projects
+      ? [...projects]
       : projects.filter((project) => project.category === filter)
-  ).sort((a, b) => b.id - a.id);
+  ).sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
 
   return (
     <>
@@ -109,7 +110,7 @@ const ProjectsPage = () => {
 
               return (
                 <div
-                  key={project.id}
+                  key={project.slug}
                   className="
                     group
                     bg-white
